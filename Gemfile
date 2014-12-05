@@ -15,6 +15,7 @@ gem 'actionpack'
 
 gem 'mixlib-config'
 gem 'mixlib-log'
+gem 'clogger'
 
 gem 'aws-sdk'
 gem 'fog'

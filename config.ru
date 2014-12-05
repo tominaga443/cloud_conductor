@@ -14,6 +14,13 @@
 # limitations under the License.
 require './src/helpers/loader'
 
+logger_option = {
+  format: '$time_iso8601 -- : $ip $remote_user "$request_method $path_info $query_string" $status $content_length $request_time{5} ',
+  path: File.expand_path(CloudConductor::Config.log_file, File.dirname(__FILE__)),
+  reentrant: true
+}
+use Clogger, logger_option
+
 use Rack::Parser, content_types: {
   'application/json'  => proc { |body| JSON.parse(body) }
 }
